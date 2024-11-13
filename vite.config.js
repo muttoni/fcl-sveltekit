@@ -10,9 +10,9 @@ const config = {
     },
     plugins: [
         nodePolyfills({
-      // Whether to polyfill `node:` protocol imports.
-      protocolImports: true,
-    }),
+            // Whether to polyfill `node:` protocol imports.
+            protocolImports: true,
+        }),
         sveltekit()
     ],
     resolve:{
@@ -23,6 +23,12 @@ const config = {
     build: {
         rollupOptions: {
             plugins: [inject({ Buffer: ['buffer', 'Buffer'] })]
+        },
+    },
+    server: {
+        fs: {
+          // Allow serving files from one level up to the project root
+          allow: ['./flow.json', './cadence'],
         },
     },
 };
