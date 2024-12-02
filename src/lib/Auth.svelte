@@ -17,7 +17,7 @@
     {#if $user?.loggedIn && $profile}
       <Profile />
     {:else}
-      <h1>Welcome!</h1>
+      <h1>Welcome</h1>
       <p>
         This is a starter app built on Flow. It demonstrates how to use the Flow
         Client Library (FCL) with SvelteKit.
